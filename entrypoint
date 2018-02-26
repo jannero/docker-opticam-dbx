@@ -1,0 +1,13 @@
+#! /usr/bin/env bash
+
+set -euo pipefail
+
+if test -v TZ
+then
+  setup-timezone -z ${TZ}
+fi
+
+usermod -u $(stat -c %u /videos) opticam-dbx
+groupmod -g $(stat -c %g /videos) opticam-dbx
+
+su opticam-dbx -c "/usr/local/bin/python -m opticam_dbx.opticam $@"
