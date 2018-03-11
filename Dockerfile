@@ -6,7 +6,9 @@ RUN \
     alpine-conf \
     bash \
     ca-certificates \
+    ffmpeg \
     shadow \
+    sudo \
     tzdata
 
 RUN \
@@ -19,7 +21,7 @@ RUN chmod a+rx /entrypoint
 
 ENV VIDEO_ROOT_DIR=/videos
 
-ARG OPTICAM_DBX_VERSION=0.1
+ARG OPTICAM_DBX_VERSION=0.2.1
 RUN pip install opticam_dbx==${OPTICAM_DBX_VERSION}
 
 ENTRYPOINT ["/entrypoint"]
