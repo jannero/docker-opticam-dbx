@@ -10,4 +10,4 @@ fi
 usermod -u $(stat -c %u /videos) opticam-dbx
 groupmod -g $(stat -c %g /videos) opticam-dbx
 
-sudo -E -u opticam-dbx /usr/local/bin/python -m opticam_dbx.cli $@
+exec sudo -E -u opticam-dbx /usr/local/bin/python -m opticam_dbx.cli $@
