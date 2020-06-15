@@ -1,5 +1,4 @@
 FROM python:3.6-alpine3.7
-MAINTAINER Janne Rönkkö <jroo@iki.fi>
 
 RUN \
   apk add --update \
