@@ -15,12 +15,9 @@ RUN \
   mkdir /videos && \
   chown opticam-dbx:opticam-dbx /videos
 
-COPY entrypoint /entrypoint
-RUN chmod a+rx /entrypoint
-
 ENV VIDEO_ROOT_DIR=/videos
 
 ARG OPTICAM_DBX_VERSION=0.2.1
 RUN pip install opticam_dbx==${OPTICAM_DBX_VERSION}
 
-ENTRYPOINT ["/entrypoint"]
+ENTRYPOINT ["python", "-m", "opticam_dbx.cli"]
