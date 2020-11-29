@@ -17,7 +17,7 @@ RUN \
 
 ENV VIDEO_ROOT_DIR=/videos
 
-ARG OPTICAM_DBX_VERSION=0.3
+ARG OPTICAM_DBX_VERSION=0.3.1
 RUN pip install opticam_dbx==${OPTICAM_DBX_VERSION}
 
 ENTRYPOINT ["python", "-m", "opticam_dbx.cli"]
